@@ -14,9 +14,6 @@ Top-down uses recursion with cache
 
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/68f5510f-1527-4724-8097-cee97a68b8a1" width="460"> <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a21ef85e-d7a2-43db-92ab-c0c80026a570" width="460">
 
-![Problem without memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/68f5510f-1527-4724-8097-cee97a68b8a1)
-![Problem with memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a21ef85e-d7a2-43db-92ab-c0c80026a570)
-
 ## When to Use DP
 #### First characteristic 
 > problem will ask for the ***optimum value (maximum or minimum)*** of something, or the ***number of ways*** there are to do something.
