@@ -12,8 +12,8 @@ Top-down uses recursion with cache
 > memoizing a result means to store the result of a function call, usually in a hashmap or an array, so that when the same function call is made again, we can simply return the memoized result instead of recalculating the result.
 > A top-down implementation is usually much ***easier to write***. This is because with recursion, the ***ordering of subproblems does not matter***, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
 
-![Problem without memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/68f5510f-1527-4724-8097-cee97a68b8a1 =250x250)
-![Problem with memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a21ef85e-d7a2-43db-92ab-c0c80026a570 =250x250)
+![Problem without memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/68f5510f-1527-4724-8097-cee97a68b8a1 | width=250)
+![Problem with memoization](https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a21ef85e-d7a2-43db-92ab-c0c80026a570 | width=250)
 
 ## When to Use DP
 #### First characteristic 
