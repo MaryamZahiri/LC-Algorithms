@@ -33,7 +33,7 @@ To solve a DP problem, we need to combine 3 things:
 3. Base cases, so that our recurrence relation doesn't go on infinitely.
 
 Top-down, With memoization, our time complexity drops to O(n) - implementations usually use an hashmap dp = {} (cache)
-```
+```python
 class Solution:
     def climbStairs(self, n: int) -> int:
         def dp(i):
@@ -51,7 +51,7 @@ class Solution:
 ```
 
 Bottom-up - implementations usually use an array dp[i]
-```
+```python
 class Solution:
     def climbStairs(self, n: int) -> int:
         if n == 1:
