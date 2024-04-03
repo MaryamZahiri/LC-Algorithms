@@ -19,7 +19,7 @@ Nodes and edges - no rules
 * Properties of Graph
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/289568f3-0c49-4315-8124-c69c0952a3cf" width="460">
 
-Graph implementation
+## Graph implementation
 1. Edge List
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/7892e93f-14c7-4ba2-9433-522eebf7d455" width="460">
 
