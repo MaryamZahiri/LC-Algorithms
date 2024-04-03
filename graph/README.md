@@ -30,3 +30,6 @@ Nodes and edges - no rules
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/2d2f9fc0-1f46-4785-b330-ba6db5e74dcc" width="460"><br />
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/d0ddfa33-07be-4997-bbad-1cc846fd7892" width="460"><br />
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ebb5e211-c8f9-40ac-ae02-51ae5c610a74" width="460"><br />
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/cd6ebaf8-79e4-4bc4-be51-f0b6f2653811" width="460"><br />
+## BFS
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/6b0a76fd-1ccb-404b-bd03-52b6ecc0e1b1" width="460"><br />
