@@ -22,9 +22,11 @@ Nodes and edges - no rules
 Graph implementation
 1. Edge List
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/7892e93f-14c7-4ba2-9433-522eebf7d455" width="460">
+
 2. Adjancy Matrix
 3. Adjancy List
 
 ## DFS
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/d0ddfa33-07be-4997-bbad-1cc846fd7892" width="460">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/2d2f9fc0-1f46-4785-b330-ba6db5e74dcc" width="460">
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ebb5e211-c8f9-40ac-ae02-51ae5c610a74" width="460">
