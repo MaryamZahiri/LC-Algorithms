@@ -32,6 +32,7 @@ Nodes and edges - no rules
 - adjacency list
 - stack
 - visited/seen
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
 ```python
 class Solution:
@@ -85,4 +86,5 @@ class Solution:
 
 ## Sources
 [Explore Graph](https://leetcode.com/explore/learn/card/graph/)
-[Explore Graph](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
+
+[Data Structur](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
