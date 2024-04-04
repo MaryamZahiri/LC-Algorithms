@@ -69,14 +69,18 @@ class Solution:
 
 ### 2. Traversing all paths between two vertices
 > Example: General dfs
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/2d2f9fc0-1f46-4785-b330-ba6db5e74dcc" width="460"><br />
 > Example: Compare dfs with stack and without it
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/d0ddfa33-07be-4997-bbad-1cc846fd7892" width="460"><br />
 > Example: Compare preorder vs postorder
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ebb5e211-c8f9-40ac-ae02-51ae5c610a74" width="460"><br />
 
 ## BFS
 > Example: General bfs
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/6b0a76fd-1ccb-404b-bd03-52b6ecc0e1b1" width="460"><br />
 
 ## Sources
