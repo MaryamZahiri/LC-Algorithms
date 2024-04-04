@@ -28,10 +28,11 @@ Nodes and edges - no rules
 
 ## DFS
 ### 1. Traversing all Vertices
+> Example: LeetCode 1971 - Find if Path Exists in Graph - DFS
 - adjacency list
 - stack
 - visited/seen
-> Example: LeetCode 1971 - Find if Path Exists in Graph - DFS
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
@@ -64,7 +65,6 @@ class Solution:
         # Our stack is empty and we did not reach the end node.
         return False
 ```
-<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/81a0ceb3-50b5-47fc-a7c6-28f1f86e5dad" width="460"><br />
 
 ### 2. Traversing all paths between two vertices
