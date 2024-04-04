@@ -34,6 +34,7 @@ Nodes and edges - no rules
 - visited/seen
 
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
+
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
@@ -66,9 +67,37 @@ class Solution:
         # Our stack is empty and we did not reach the end node.
         return False
 ```
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/81a0ceb3-50b5-47fc-a7c6-28f1f86e5dad" width="460"><br />
 
 ### 2. Traversing all paths between two vertices
+> Example: LeetCode 797 - All Paths From Source to Target
+- Directed graph: No need to mark as visited node (Only in undirected graph, we mark visited nodes )
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/db65688d-8efd-491d-8a18-031c17f968c0" width="460"><br />
+
+```python
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        def dfs(node):
+            path.append(node)
+            if node == len(graph) - 1:
+                paths.append(path.copy())
+                return
+
+            next_nodes = graph[node]
+            for next_node in next_nodes:
+                dfs(next_node)
+                path.pop()
+
+        paths = []
+        path = []
+        if not graph or len(graph) == 0:
+            return paths
+        dfs(0)
+        return paths
+```
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/7bf7d544-71d1-4b5c-bf2f-e5645ed3852e" width="460"><br />
+
 > Example: General dfs
 
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/2d2f9fc0-1f46-4785-b330-ba6db5e74dcc" width="460"><br />
