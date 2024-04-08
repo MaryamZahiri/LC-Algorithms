@@ -36,12 +36,12 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 - DFS Approach - Depth First Search Algorithm in Graph
 - BFS Approach - Breadth-First Search Algorithm in Graph
 #### DFS Data Structure 
-- adjacency list - mapping all nodes to list of the neighbor node
+- adjacency list - Graph model - mapping all nodes to list of the neighbor node
 - stack
 - visited/seen
-#### BFS Data Structure 
-- adjacency list
-- Queue
+#### BFS Data Structure - Shortest move possible
+- adjacency list - Graph model - mapping all nodes to list of the neighbor node 
+- Queue - FIFO - First in, First out
 - visited/seen
 #### DFS Example Explanation
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/71e6117d-d6c9-4ab4-8284-231935e3d02f" width="250">
@@ -58,7 +58,13 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="250"><br />
 
 #### BFS Example Explanation
-<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/19282abf-33b1-4c62-936e-b691a805072c" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/b5f25d2c-f8a5-4574-9238-5913e6045578" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/d1e37d13-3ae8-4f31-9463-1352d5bca3c2" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/2c19b4fb-063e-43fb-8a91-3fc615cda7a1" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/4dea6c3f-47c3-4aa5-bd31-be8c129c710f" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a6ac1ee8-bd74-47ed-9749-832ba00e7714" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/3427bb86-658e-4bc2-9310-277d7c13ed5e" width="460"><br />
 
 #### Code Solutions
 ##### DFS Solution
@@ -94,8 +100,43 @@ class Solution:
         # Our stack is empty and we did not reach the end node.
         return False
 ```
-
+##### BFS Solution
+```python
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
+        
+        adjacency_list = [[] for _ in range(n)]
+        for a, b in edges:
+            adjacency_list[a].append(b)
+            adjacency_list[b].append(a)
+        
+        queue = collections.deque([start])
+        seen = set([start])
+        
+        while queue:
+            # Get the current node.
+            node = queue.popleft()
+            
+            # Check if we have reached the target node.
+            if node == end:
+                return True
+            
+            # Add all neighbors to the queue.
+            for neighbor in adjacency_list[node]:
+                # Check if neighbor has been added to the queue before.
+                if neighbor not in seen:
+                    seen.add(neighbor)
+                    queue.append(neighbor)
+        
+        # Our queue is empty and we did not reach the end node.
+        return False
+```
+#### Complexity Analysis
+##### DFS Complexity
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/81a0ceb3-50b5-47fc-a7c6-28f1f86e5dad" width="460"><br />
+
+##### BFS Complexity
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/84852977-1960-4b43-82ca-263f106c2f3c" width="460"><br />
 
 ### 2. Traversing all paths between two vertices
 > Example: LeetCode 797 - All Paths From Source to Target
@@ -141,6 +182,6 @@ class Solution:
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/6b0a76fd-1ccb-404b-bd03-52b6ecc0e1b1" width="460"><br />
 
 ## Sources
-[Explore Graph](https://leetcode.com/explore/learn/card/graph/)
+[Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
 
 [Data Structur](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
