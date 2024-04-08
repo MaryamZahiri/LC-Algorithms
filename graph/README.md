@@ -166,11 +166,11 @@ The graph is given as follows: graph[i] is a list of all nodes you can visit fro
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/db65688d-8efd-491d-8a18-031c17f968c0" width="250"><br />
 
 #### BFS Example Explanation
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/e1346d46-25cd-4dfe-bff6-dc4d15ae41ab" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ce7a2fdd-2285-47a1-b06d-1c4ab0046aaf" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a40f78fb-9f90-4a98-b5f2-8987143fcd5d" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/daa7f106-6edf-4ad9-8ac6-2ee3eec9513b" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/c846f644-c90f-4197-a32a-20417db262e9" width="250">
 <img src="" width="250">
 <img src="" width="250"><br />
 
