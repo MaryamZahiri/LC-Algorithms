@@ -200,14 +200,35 @@ class Solution:
 ```
 ##### BFS Solution
 ```python
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        paths = []
+        if not graph or len(graph) == 0:
+            return paths
 
+        queue = deque()
+        path = [0]
+        queue.append(path)
+
+        while queue:
+            current_path = queue.popleft()
+            node = current_path[-1]
+            for next_node in graph[node]:
+                temp_path = current_path.copy()
+                temp_path.append(next_node)
+
+                if next_node == len(graph) - 1:
+                    paths.append(temp_path)
+                else:
+                    queue.append(temp_path)
+        return paths
 ```
 #### Complexity Analysis
 ##### DFS Complexity
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/7bf7d544-71d1-4b5c-bf2f-e5645ed3852e" width="460"><br />
 
 ##### BFS Complexity
-<img src="" width="460"><br />
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/f67558cd-8129-4eea-938e-8f2e3681f47b" width="460"><br />
 
 
 
