@@ -21,7 +21,8 @@ Given a 2D grid grid of '1's (land) and '0's (water), count the number of island
         - Then, add it to visited set and append it to queue memory
     - return number of counted islands
 ## Example Description
-BFS algorithm, go layer by layer
+BFS algorithm, traverse in each level
+
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/e4fe4d8a-8747-47fb-ade3-cbdc9ca1163b" width="250"><br />
 
 ## Python Code
