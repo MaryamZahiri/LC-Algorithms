@@ -39,7 +39,7 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 - adjacency list - Graph model - mapping all nodes to list of the neighbor node
 - stack - Top out
 - visited/seen
-#### BFS Data Structure - Shortest move possible
+#### BFS Data Structure - Shortest move possible - It is not recursive algorithm, it is itterative
 - adjacency list - Graph model - mapping all nodes to list of the neighbor node 
 - Queue - FIFO - First in, First out
 - visited/seen
