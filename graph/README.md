@@ -26,15 +26,45 @@ Nodes and edges - no rules
 2. Adjancy Matrix
 3. Adjancy List
 
-## DFS
+## Graph Algorithm
 ### 1. Traversing all Vertices
-> Example: LeetCode 1971 - Find if Path Exists in Graph - DFS
-- adjacency list
+#### Problem Description
+> Example: LeetCode Problem 1971 - [Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/description/)
+There is a bi-directional graph with n vertices, where each vertex is labeled from 0 to n - 1 (inclusive). The edges in the graph are represented as a 2D integer array edges, where each edges[i] = [ui, vi] denotes a bi-directional edge between vertex ui and vertex vi. Every vertex pair is connected by at most one edge, and no vertex has an edge to itself.
+
+You want to determine if there is a valid path that exists from vertex source to vertex destination.
+
+Given edges and the integers n, source, and destination, return true if there is a valid path from source to destination, or false otherwise.
+#### Solution Approaches
+- DFS Approach - Depth First Search Algorithm in Graph
+- BFS Approach - Breadth-First Search Algorithm in Graph
+#### DFS Data Structure 
+- adjacency list - mapping all nodes to list of the neighbor node
 - stack
 - visited/seen
+#### BFS Data Structure 
+- adjacency list
+- Queue
+- visited/seen
+#### DFS Example Explanation
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/71e6117d-d6c9-4ab4-8284-231935e3d02f" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/cc8797f9-c400-40ea-a376-0918fa700733" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ab60b9d7-19a1-4657-8966-376587a5b1dc" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/600064aa-eb86-46c3-a601-1e47a5b16e7e" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/d9d90630-d145-4d65-a974-638b2a9bc6ec" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/840450ee-4346-4bf4-b442-af3d7a41db56" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/4efdab4f-7b54-479c-a4ec-7e4ec4e9eaa6" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/b4d38539-e41f-437a-807d-802bb3dd77c1" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/26c6954a-91b2-4bc1-8eef-23dd0e69d7f2" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/3fe02044-63ca-4d95-aa1f-cd21a22eef72" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/ad804820-dba8-4a0e-9931-d46b2902d206" width="250">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="250"><br />
 
+#### BFS Example Explanation
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/97027df0-bd56-4684-b520-2a4c91c317a1" width="460"><br />
 
+#### Code Solutions
+##### DFS Solution
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
