@@ -10,8 +10,9 @@ Given a 2D grid grid of '1's (land) and '0's (water), count the number of island
     - queue: memory to track the cell of grid
 - Steps:
     - Initialize variables and data structure 
-    - Traverse the grid
-    - Whenever we encounter a land cell '1' that hasn't been visited, we call bfs function and increment the count of islands
+    - Traverse the grid by 2 for loop 
+    - Whenever we encounter a land cell '1' that hasn't been visited, we call bfs function to check the visited status and land cell for 4 neighbors of the cell
+    - Then increment the count of islands
         - In BFS function, initialize queue and visited. 
         - While our queue is not empty, update current row and current column by popping the first cell in queue 
         - Define direction (2d array) for right, left, up, down neighbors of each cell 
