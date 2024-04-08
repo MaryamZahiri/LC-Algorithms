@@ -5,16 +5,24 @@ Given a 2D grid grid of '1's (land) and '0's (water), count the number of island
 ### BFS Algorithm
 - Data Structure: 
     - visited: set
-    - row, col: variable for grid
+    - row, col: variables to traverse the grid and track 
     - island counter: output variable
-    - queue: memory to track cell of grid
+    - queue: memory to track the cell of grid
 - Steps:
     - Initialize variables and data structure 
     - Traverse the grid
     - Whenever we encounter a land cell '1' that hasn't been visited, we call bfs function and increment the count of islands
-    - In BFS function, we check if the current cell is in bound, not visited and land cell is "1"
-    - Then, add it to visited set and append it to queue memory
+        - In BFS function, initialize queue and visited. 
+        - While our queue is not empty, update current row and current column by popping the first cell in queue 
+        - Define direction (2d array) for right, left, up, down neighbors of each cell 
+        - While looping to check 4 direction of each cell, we check if the current cell is in bound, not visited and land cell is "1"
+        - Update the row and colomn direction based on 4 directions horizontally and virtically 
+        - Then, add it to visited set and append it to queue memory
+    - return number of counted islands
 ## Example Description
+BFS algorithm, go layer by layer
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/e4fe4d8a-8747-47fb-ade3-cbdc9ca1163b" width="250"><br />
+
 ## Python Code
 ```python
 class Solution:
