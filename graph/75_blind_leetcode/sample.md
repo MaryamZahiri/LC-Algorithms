@@ -2,11 +2,10 @@
 ## Problem Description
 ## Solution Approaches
 ### BFS Algorithm
-- Data Structure: 
-    - 
-- Steps:
-    - Initialize variables and data structure 
-    - Traverse the grid by 2 for loop 
+Algorithm Pattern:
+
+1. Initialization:
+    - Determine 
 ## Example Description
 BFS algorithm, traverse in each level
 
