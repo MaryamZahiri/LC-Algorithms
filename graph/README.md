@@ -30,4 +30,4 @@ Nodes and edges - no rules
 ## Sources
 [Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
 
-[Data Structur](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
+[Data Structure](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)

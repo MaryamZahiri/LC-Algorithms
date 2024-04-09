@@ -12,12 +12,11 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 ### DFS Algorithm
 > Data Structure:
 
-    ```
     Adjacency list - Graph model - mapping all nodes to list of the neighbor node
 
     Stack - A Last-In-First-Out (LIFO) Structure - Pop Top element
     
-    Visited/seen```
+    Visited/seen
 
 1. Initialization
     - Purpose: Set up the necessary data structures and prepare the graph for traversal.
@@ -38,13 +37,11 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 ### BFS Algorithm - Shortest move possible - It is not recursive algorithm, it is itterative
 > Data Structure:
     
-    ```
     Adjacency list - Graph model - mapping all nodes to list of the neighbor node 
 
     Queue - A First-In-First-Out (FIFO) structure
 
     Visited/seen
-    ```
 
 1. Initialization
     Purpose: Set up the necessary data structures and prepare the graph for traversal.

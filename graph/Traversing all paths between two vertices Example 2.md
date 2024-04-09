@@ -1,4 +1,4 @@
-# 1. Graph Algorithm - Traversing all paths between two vertices vs Shortest Path Between Two Vertices
+# 2. Graph Algorithm - Traversing all paths between two vertices vs Shortest Path Between Two Vertices
 This pattern is efficient for solving problems involving finding all paths between two vertices in a ```directed acyclic graph```, allowing for the exploration of all possible paths from the source to the target vertex.
 
 # LeetCode Problem 797: [All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/description/)
@@ -52,13 +52,11 @@ Breadth-First Search (BFS) approach to explore all possible paths from the sourc
 
 > Data Structure:
     
-    ```
     Adjacency list - Graph model - mapping all nodes to list of the neighbor node 
 
     Queue - A First-In-First-Out (FIFO) structure
 
     Visited/seen
-    ```
 
 Algorithm Pattern: BFS for Finding All Paths Between Two Vertices
 1. Initialization
