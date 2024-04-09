@@ -10,9 +10,9 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 - BFS Approach - Breadth-First Search Algorithm in Graph
 ### DFS Algorithm
 > Data Structure:
-    > - Adjacency list - Graph model - mapping all nodes to list of the neighbor node
-    > - Stack - A Last-In-First-Out (LIFO) Structure - Pop Top element 
-    > - Visited/seen
+    >> Adjacency list - Graph model - mapping all nodes to list of the neighbor node
+    >> Stack - A Last-In-First-Out (LIFO) Structure - Pop Top element 
+    >> Visited/seen
 
 1. Initialization
     - Purpose: Set up the necessary data structures and prepare the graph for traversal.
