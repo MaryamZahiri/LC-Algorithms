@@ -1,0 +1,87 @@
+# LeetCode Problem 417: [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
+## Problem Description
+Given an m x n matrix of non-negative integers representing the height of each unit cell in a continent, the "Pacific ocean" touches the left and top edges of the matrix, and the "Atlantic ocean" touches the right and bottom edges.
+
+Water can only flow in four directions (up, down, left, or right) from a cell to another one with height equal or lower.
+
+Find the list of grid coordinates where water can flow to both the Pacific and Atlantic oceans.
+## Solution Approaches
+### DFS Algorithm
+Algorithm Pattern: Pacific Atlantic Water Flow using DFS
+
+Solution involves using a Depth-First Search (DFS) approach to explore all possible paths from the border cells to the interior of the grid, marking cells that can flow to both oceans.
+
+1. Initialization
+    - Purpose: Prepare the necessary data structures for the algorithm.
+    - Steps:
+        - Create a 2D boolean matrix pacific and atlantic of the same size as the input grid, initialized to False. These matrices will track whether a cell can flow to the Pacific and Atlantic oceans, respectively.
+        - Create a list of cells that are on the border of the grid, which are the starting points for the DFS.
+2. DFS Function
+    - Purpose: Perform a depth-first search from each border cell to explore all possible paths to the Pacific and Atlantic oceans.
+    - Steps:
+        - Define a nested function dfs that takes a cell (row, col) and a matrix (either pacific or atlantic) as input.
+        - Initialize a stack with the starting cell and mark it as visited in the matrix.
+        - Perform DFS by popping cells from the stack and pushing their unvisited neighbors that are within the grid boundaries and have not been visited yet.
+        - For each neighbor, update the matrix to indicate that the cell can flow to the Pacific or Atlantic ocean, depending on the matrix being updated.
+3. Main Function
+    - Purpose: Determine which cells can flow to both oceans.
+    - Steps:
+        - Call the dfs function for each border cell, alternating between the pacific and atlantic matrices.
+        - After the DFS is complete, iterate over the grid to find cells that are marked as True in both matrices. These cells are the ones that can flow to both oceans
+## Example Description
+
+## Python Code
+```python
+class Solution:
+    def pacificAtlantic(self, heights):
+        # Check if input is empty
+        if not heights or not heights[0]: 
+            return []
+        
+        # Initialize variables, including hash sets used to keep track of visited cells
+        num_row, num_col = len(heights), len(heights[0])
+        pacific_visit, atlantic_visit = set(), set()
+        
+        def dfs(row, col, visit, pre_height):
+            # Check if the new cell is within bounds
+            if row < 0 or row == num_row or col < 0 or col == num_col:
+                return
+            # Check that the new cell hasn't already been visited
+            if (row, col) in visit:
+                return
+            # Check that the new cell has a higher or equal heights,
+            # So that water can flow from the cell to the pre cell
+            if heights[row][col] < pre_height:
+                return
+            
+            # This cell is reachable, so mark it
+            visit.add((row, col))
+
+            # If we've gotten this far, that means the new cell is reachable
+            # neighbors: dfs for 4 neighbor direction 
+            dfs(row + 1, col, visit, heights[row][col])
+            dfs(row - 1, col, visit, heights[row][col])
+            dfs(row, col + 1, visit, heights[row][col])
+            dfs(row, col - 1, visit, heights[row][col])
+
+        # Loop through each cell adjacent to the oceans and start a DFS
+        for r in range(num_row):
+            dfs(r, 0, pacific_visit, heights[r][0])
+            dfs(r, num_col - 1, atlantic_visit, heights[r][num_col - 1])
+        for c in range(num_col):
+            dfs(0, c, pacific_visit, heights[0][c])
+            dfs(num_row - 1, c, atlantic_visit, heights[num_row - 1][c])
+
+        # Find all cells that can reach both oceans, and convert to list
+        return list(pacific_visit.intersection(atlantic_visit))
+```
+```python
+heights = [[1,1],[1,1],[1,1]]
+solution = Solution()
+common = solution.pacificAtlantic(heights)
+print(common)
+```
+## Complexity Analysis
+- Time complexity : O(M * N), where M is the number of rows and N is the number of columns in the grid. This is because each cell in the grid is visited at most once.
+
+- Space complexity : O(M * N), where M is the number of rows and N is the number of columns in the grid. This is due to the space required for the pacific and atlantic matrices and the call stack in the worst case.
