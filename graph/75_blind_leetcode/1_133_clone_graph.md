@@ -1,0 +1,88 @@
+# LeetCode Problem 133: [Clone Graph](https://leetcode.com/problems/clone-graph/description/)
+## Problem Description
+Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph.
+
+Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.
+## Solution Approaches
+### DFS Algorithm
+Algorithm Pattern:
+
+1. Initialization
+    - Create a dictionary oldToNew to map nodes in the original graph to their corresponding nodes in the cloned graph.
+2. DFS Function
+    - Define a nested function dfs that takes a node from the original graph as input.
+    - Check if the node has already been visited (i.e., if it exists in oldToNew). If so, return the corresponding node from the cloned graph.
+    Create a new node copy in the cloned graph with the same value as the original node.
+    - Add the mapping from the original node to the new node in oldToNew.
+    - Iterate over each neighbor of the original node. For each neighbor, recursively call dfs to clone the neighbor and its subgraph. Append the cloned neighbor to the neighbors list of the new node.
+    - Return the new node.
+3. Main Function
+    - Call the dfs function with the root node of the original graph to start the cloning process.
+    - Return the cloned root node.
+4. Utility Function (Optional)
+    - Define a utility function to print the graph nodes and their neighbors. > This is useful for debugging and verifying the correctness of the cloned graph.
+## Example Description
+
+## Python Code
+```python
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+```
+```python
+class Solution:
+    def cloneGraph(self, node):
+        oldToNew = {}
+
+        def dfs(node):
+            # visited
+            if node in oldToNew:
+                return oldToNew[node]
+
+            copy = Node(node.val)
+            oldToNew[node] = copy
+
+            for neighbor in node.neighbors:
+                copy.neighbors.append(dfs(neighbor))
+            return copy
+        
+        return dfs(node) if node else None
+```
+```python
+# nodes = [[2,4],[1,3],[2,4],[1,3]]
+# Create nodes
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+
+# Define neighbors
+node1.neighbors = [node2, node4]
+node2.neighbors = [node1, node3]
+node3.neighbors = [node2, node4]
+node4.neighbors = [node1, node3]
+
+solution = Solution()
+cloned_graph = solution.cloneGraph(node1)
+
+# Function to print graph nodes and their neighbors
+def print_graph(node, visited):
+    if not node or node in visited:
+        return
+    visited.add(node)
+    print(f"Node {node.val} -> {[n.val for n in node.neighbors]}")
+    for neighbor in node.neighbors:
+        print_graph(neighbor, visited)
+
+# Print original and cloned graphs
+print("Original Graph:")
+print_graph(node1, set())
+print("\nCloned Graph:")
+print_graph(cloned_graph, set())
+```
+## Complexity Analysis
+- Time complexity : O(N), where N is the number of nodes in the graph. This is because each node is visited exactly once.
+
+- Space complexity : O(N), where N is the number of nodes in the graph. This is due to the space required for the oldToNew dictionary and the recursive call stack in the worst case.
