@@ -3,39 +3,23 @@
 Given a 2D grid grid of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. Assume all four edges of the grid are all surrounded by water.
 ## Solution Approaches
 ### BFS Algorithm
-- Data Structure: 
-    - visited: hash set
-    - row, col: variables to traverse the grid and track 
-    - island counter: output variable
-    - queue: memory to track the cell of grid
-- Algorithm Pattern:
+Algorithm Pattern:
     1. Initialization:
-    - Determine the dimensions of the grid (rows and cols).
-    - Initialize a visited set to keep track of visited cells.
-    - Initialize a counter island_num to count the number of islands.
+    - Determine the dimensions of the grid (```rows and cols```).
+    - Initialize a ```visited set``` to keep track of visited cells.
+    - Initialize a ```counter island_num``` to count the number of islands.
     2. BFS Function:
     - Define a nested function bfs that takes a starting cell (row, col) as input.
-    - Initialize a queue with the starting cell.
+    - Initialize a ```queue``` with the starting cell.
     - Mark the starting cell as visited.
-    - Perform BFS by dequeuing cells and enqueuing their unvisited neighbors.
+    - Perform BFS by dequeuing cells and enqueuing their unvisited neighbors under some conditions.
     3. Main Loop:
     - Iterate over each cell in the grid.
-    - If a cell is land ("1") and has not been visited, call the bfs function to explore the island starting from this cell.
+    - If a cell is land ("1") and has not been visited, call the bfs function to explore the island starting from this cell and ```neighbors in 4 direction```.
     - Increment the island_num counter after each island is found.
     4. Return Result:
     - Return the total number of islands found.
-- Steps:
-    - Initialize variables and data structure 
-    - Traverse the grid by 2 for loop 
-    - Whenever we encounter a land cell '1' that hasn't been visited, we call bfs function to check the visited status and land cell for 4 neighbors of the cell
-    - Then increment the count of islands
-        - In BFS function, initialize queue and visited. 
-        - While our queue is not empty, update current row and current column by popping the first cell in queue 
-        - Define direction (2d array) for right, left, up, down neighbors of each cell 
-        - While looping to check 4 direction of each cell, we check if the current cell is in bound, not visited and land cell is "1"
-        - Update the row and colomn direction based on 4 directions horizontally and virtically 
-        - Then, add it to visited set and append it to queue memory
-    - return number of counted islands
+
 ## Example Description
 BFS algorithm, traverse in each level
 
