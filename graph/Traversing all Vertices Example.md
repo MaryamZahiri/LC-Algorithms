@@ -36,11 +36,13 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 ### BFS Algorithm - Shortest move possible - It is not recursive algorithm, it is itterative
 > Data Structure:
     
-    ```Adjacency list - Graph model - mapping all nodes to list of the neighbor node``` 
+    ```
+    Adjacency list - Graph model - mapping all nodes to list of the neighbor node 
 
-    ```Queue - A First-In-First-Out (FIFO) structure```
+    Queue - A First-In-First-Out (FIFO) structure
 
-    ```Visited/seen```
+    Visited/seen
+    ```
 
 1. Initialization
     Purpose: Set up the necessary data structures and prepare the graph for traversal.
