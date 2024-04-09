@@ -4,20 +4,21 @@ Given a 2D grid grid of '1's (land) and '0's (water), count the number of island
 ## Solution Approaches
 ### BFS Algorithm
 Algorithm Pattern:
-    1. Initialization:
+
+1. Initialization:
     - Determine the dimensions of the grid (```rows and cols```).
     - Initialize a ```visited set``` to keep track of visited cells.
     - Initialize a ```counter island_num``` to count the number of islands.
-    2. BFS Function:
+2. BFS Function:
     - Define a nested function bfs that takes a starting cell (row, col) as input.
     - Initialize a ```queue``` with the starting cell.
     - Mark the starting cell as visited.
     - Perform BFS by dequeuing cells and enqueuing their unvisited neighbors under some conditions.
-    3. Main Loop:
+3. Main Loop:
     - Iterate over each cell in the grid.
     - If a cell is land ("1") and has not been visited, call the bfs function to explore the island starting from this cell and ```neighbors in 4 direction```.
     - Increment the island_num counter after each island is found.
-    4. Return Result:
+4. Return Result:
     - Return the total number of islands found.
 
 ## Example Description
