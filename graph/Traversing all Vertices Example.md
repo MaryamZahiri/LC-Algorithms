@@ -35,10 +35,11 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
         - The DFS function will recursively visit all reachable nodes from the starting node.
 ### BFS Algorithm - Shortest move possible - It is not recursive algorithm, it is itterative
 > Data Structure:
+    
     ```Adjacency list - Graph model - mapping all nodes to list of the neighbor node``` 
 
     ```Queue - A First-In-First-Out (FIFO) structure```
-    
+
     ```Visited/seen```
 
 1. Initialization
