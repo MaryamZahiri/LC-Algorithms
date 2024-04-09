@@ -14,7 +14,7 @@ Nodes and edges - no rules
 > Road map network (weight = distances)
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/32e6a102-1577-493c-9035-88829b986e3e" width="460">
 
-### Properties of Graph
+## Properties of Graph
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/289568f3-0c49-4315-8124-c69c0952a3cf" width="460">
 
 ## Graph implementation
@@ -25,7 +25,7 @@ Nodes and edges - no rules
 ## Graph Algorithm
 ### 1. [Traversing all Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Traversing%20all%20Vertices%20Example.md)
 
-### 2. [Traversing all paths between two vertices vs Shortest Path Between Two Vertices]()
+### 2. [Traversing all paths between two vertices vs Shortest Path Between Two Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Traversing%20all%20paths%20between%20two%20vertices%20Example%202.md)
 
 ## Sources
 [Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
