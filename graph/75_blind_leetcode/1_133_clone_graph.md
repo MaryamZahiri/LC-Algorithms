@@ -24,6 +24,7 @@ Algorithm Pattern:
 ## Example Description
 
 ## Python Code
+Node Class
 ```python
 # Definition for a Node.
 class Node:
@@ -31,6 +32,7 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 ```
+Solution Class
 ```python
 class Solution:
     def cloneGraph(self, node):
@@ -50,6 +52,7 @@ class Solution:
         
         return dfs(node) if node else None
 ```
+Utility Function
 ```python
 # nodes = [[2,4],[1,3],[2,4],[1,3]]
 # Create nodes
