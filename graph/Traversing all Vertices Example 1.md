@@ -1,4 +1,5 @@
-1. Graph Algorithm - Traversing all Vertices
+# 1. Graph Algorithm - Traversing all Vertices
+These patterns provide a structured approach to traversing all vertices in a graph using DFS and BFS. DFS is particularly useful for problems that require exploring all possible paths or when the solution involves finding a path or a cycle in a graph. BFS, on the other hand, is ideal for problems that involve finding the shortest path or when the graph is unweighted
 
 # LeetCode Problem 1971: [Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph/description/)
 
