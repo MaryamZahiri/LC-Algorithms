@@ -13,10 +13,10 @@ Algorithm Pattern:
     - Define a nested function bfs that takes a starting cell (row, col) as input.
     - Initialize a ```queue``` with the starting cell.
     - Mark the starting cell as visited.
-    - Perform BFS by dequeuing cells and enqueuing their unvisited neighbors under some conditions.
+    - Perform BFS by dequeuing cells and enqueuing their unvisited neighbors under conditions.
 3. Main Loop:
     - Iterate over each cell in the grid.
-    - If a cell is land ("1") and has not been visited, call the bfs function to explore the island starting from this cell and ```neighbors in 4 direction```.
+    - If a cell is land ("1") and has not been visited, call the bfs function to explore all cells connected to the current cell by visiting each neighboring cell (up, down, left, right) that is part of the island.
     - Increment the island_num counter after each island is found.
 4. Return Result:
     - Return the total number of islands found.
@@ -68,5 +68,10 @@ class Solution:
 ```
 ## Complexity Analysis
 - Time complexity : O(M×N) where M is the number of rows and N is the number of columns.
+    - Iterating Over the Grid: The algorithm starts by iterating over each cell in the grid. This iteration is done in a ```nested loop```, where the outer loop iterates over the rows and the inner loop iterates over the columns. Since there are M rows and N columns, the total number of iterations is M×N.
+    - BFS for Each Island: For each cell that is identified as part of an island (i.e., a cell with a value of "1" that has not been visited yet), the BFS algorithm is called. The BFS algorithm explores all cells connected to the current cell by visiting each neighboring cell (up, down, left, right) that is part of the island. This exploration is done by adding each neighboring cell to a queue and then processing each cell in the queue, which involves checking its neighbors.
+    -Processing Each Cell: Each cell in the grid is processed at most once. When a cell is visited, it is ```added to the visited set, ensuring that it will not be processed again```. This ensures that the algorithm does not perform unnecessary work by revisiting cells.
+    - Queue Operations: The BFS algorithm uses **a queue to keep track of cells to be visited**. In the worst-case scenario, where the grid is filled with lands (i.e., all cells are part of an island), the queue can grow to include all cells in the grid. However, this does not change the overall time complexity because the ```queue operations (adding and removing cells) are constant time operations```, and the ```total number of cells added to the queue is still proportional to the size of the grid (M×N)```.
+> In summary, the time complexity is O(M×N) because the ```algorithm iterates over each cell in the grid once``` and performs ```a constant amount of work for each cell```. The **BFS algorithm's time complexity is not a factor** in the overall time complexity because it is **bounded** by the number of cells in the grid, which is M×N.
 
-- Space complexity : O(min(M,N)) because in worst case where the grid is filled with lands, the size of queue can grow up to min(M,N).
+- Space complexity : O(MxN) because in worst case where the grid is filled with lands, the size of queue and visited set can store all cells of the grid and grow up to O(MxN).
