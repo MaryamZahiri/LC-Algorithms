@@ -4,59 +4,42 @@ This pattern is efficient for solving problems involving finding all paths betwe
 # LeetCode Problem 797: [All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/description/)
 
 ## Problem Description
-- Directed graph: No need to mark as visited node (Only in undirected graph, we mark visited nodes )
-
 Given a directed acyclic graph (DAG) of n nodes labeled from 0 to n - 1, find all possible paths from node 0 to node n - 1 and return them in any order.
 The graph is given as follows: graph[i] is a list of all nodes you can visit from node i (i.e., there is a directed edge from node i to node graph[i][j]).
 
 ## Solution Approaches
+> Directed graph: No need to mark as visited node (Only in undirected graph, we mark visited nodes )
+
 - DFS Approach - Depth First Search Algorithm in Graph
 - BFS Approach - Breadth-First Search Algorithm in Graph
 
 ### DFS Algorithm
 The DFS approach is particularly useful for problems that require exploring all possible paths or when the solution involves finding a path or a cycle in a graph.
 
-> Data Structure:
-
-    Adjacency list - Graph model - mapping all nodes to list of the neighbor node
-
-    Stack - A Last-In-First-Out (LIFO) Structure - Pop Top element
-    
-    Visited/seen
-
 Algorithm Pattern: DFS for Finding All Paths Between Two Vertices
 
 1. Initialization
     - Purpose: Set up the necessary data structures and prepare the graph for traversal.
     - Steps:
-        - Create an adjacency list or matrix to represent the graph.
-        - Initialize a list paths to store all valid paths from the source to the target.
-        - Initialize a list path to keep track of the current path being explored.
+        - Initialize a list ```paths``` to store all valid paths from the source to the target.
+        - Initialize a list ```path``` to keep track of the current path being explored.
 2. DFS Function
     - Purpose: Explore the graph by going as deep as possible along each branch before backtracking.
     - Steps:
         - Define a recursive function that takes the current node as input.
         - Append the current node to the path list.
         - Check if the current node is the target vertex. If so, add the current path to the paths list.
-        - For each neighbor of the current node, if the neighbor has not been visited, recursively call the DFS function on the neighbor.
+        - For each neighbor of the current node, recursively call the DFS function on the neighbor.
         - After exploring all neighbors, remove the current node from the path list to backtrack.
 3. Main Function
-    Purpose: Initiate the DFS traversal from the source vertex.
-    Steps:
-    Call the DFS function with the source vertex as the starting point.
-    The DFS function will recursively visit all reachable nodes from the source vertex, exploring all possible paths to the target vertex.
-    Return the list of all valid paths.
+    - Purpose: Initiate the DFS traversal from the source vertex.
+    - Steps:
+        - Call the DFS function with the source vertex as the starting point.
+        - The DFS function will recursively visit all reachable nodes from the source vertex, exploring all possible paths to the target vertex.
+        - Return the list of all valid paths.
 
 ### BFS Algorithm - Shortest move possible - It is not recursive algorithm, it is itterative
 Breadth-First Search (BFS) approach to explore all possible paths from the source vertex to the target vertex in a directed acyclic graph (DAG)
-
-> Data Structure:
-    
-    Adjacency list - Graph model - mapping all nodes to list of the neighbor node 
-
-    Queue - A First-In-First-Out (FIFO) structure
-
-    Visited/seen
 
 Algorithm Pattern: BFS for Finding All Paths Between Two Vertices
 1. Initialization
