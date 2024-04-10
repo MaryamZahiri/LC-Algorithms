@@ -21,22 +21,22 @@ There is a bi-directional graph with n vertices, where each vertex is labeled fr
 Algorithm Pattern: DFS for Traversing All Vertices Using a Stack
 
 1. Initialization
-    Purpose: Set up the necessary data structures and prepare the graph for traversal.
-    Steps:
+    - Purpose: Set up the necessary data structures and prepare the graph for traversal.
+    - Steps:
         Create an adjacency list or matrix to represent the graph.
         Initialize a stack to keep track of nodes to visit next.
         Initialize a set or list to keep track of visited nodes.
 2. DFS Function
-    Purpose: Explore the graph by going as deep as possible along each branch before backtracking, using a stack instead of recursive calls.
-    Steps:
+    - Purpose: Explore the graph by going as deep as possible along each branch before backtracking, using a stack instead of recursive calls.
+    - Steps:
         - Push the starting node onto the stack.
         - While the stack is not empty, pop a node from the stack.
         - Check if the node has already been visited. If so, continue to the next iteration.
         - Mark the node as visited.
         - For each neighbor of the current node, if the neighbor has not been visited, push it onto the stack.
 3. Main Function
-    Purpose: Initiate the DFS traversal from a starting node.
-    Steps:
+    - Purpose: Initiate the DFS traversal from a starting node.
+    - Steps:
         - Call the DFS function with the starting node.
         - The DFS function will iteratively visit all reachable nodes from the starting node using the stack.
 ### BFS Algorithm - Shortest move possible - It is not recursive algorithm, it is itterative
