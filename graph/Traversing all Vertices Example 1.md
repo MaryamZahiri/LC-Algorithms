@@ -106,6 +106,7 @@ Adjacency List
 # index -> [neighbor 1, neighbor 2]
 adjacency_list = [[1,2],[0,2],[0,1]]
 ```
+Solution Code
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
@@ -174,10 +175,12 @@ class Solution:
 ## Complexity Analysis
 - Time complexity : 
     - DFS Time Complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+        - Visiting Each Vertex (V): In a DFS traversal, every vertex in the graph is visited exactly once. This is because DFS explores as far as possible along each branch before backtracking. Therefore, the time complexity associated with visiting each vertex is O(V).
+        - Exploring Each Edge (E): For each vertex visited, DFS explores all its adjacent edges to find unvisited vertices. In the worst case, where the graph is dense (i.e., every vertex is connected to every other vertex), each edge will be explored once. Therefore, the time complexity associated with exploring each edge is O(E).
 
     - BFS Time Complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
 
 - Space complexity : 
-    - DFS Space Complexity - O(V), where V is the number of vertices in the graph. This accounts for the space required for the visited set and the call stack in the worst case.
+    - DFS Space Complexity - O(V), where V is the number of vertices in the graph. This accounts for the space required for the ```visited``` set and the call ```stack``` in the worst case.
 
-    - BFS Space Complexity - O(V), where V is the number of vertices in the graph. This accounts for the space required for the visited set and the queue in the worst case.
+    - BFS Space Complexity - O(V), where V is the number of vertices in the graph. This accounts for the space required for the ```visited``` set and the ```queue``` in the worst case.
