@@ -51,19 +51,19 @@ Algorithm Pattern: DFS for Traversing All Vertices Using a Stack
 1. Initialization
     - Purpose: Set up the necessary data structures and prepare the graph for traversal.
     - Steps:
-        - Create an adjacency list or matrix to represent the graph.
-        - Initialize a queue to keep track of nodes to visit next.
-        - Initialize a set or list to keep track of visited nodes.
+        - Create an ```adjacency list``` or matrix to represent the graph.
+        - Initialize a ```queue``` to keep track of nodes to visit next.
+        - Initialize a ```set``` or list to keep track of visited nodes.
 2. BFS Function
     - Purpose: Explore the graph by visiting all the neighbors of the current node before moving on to their neighbors.
     - Steps:
         - Define a function that iterates over the nodes in the queue.
-        - Dequeue a node from the queue and mark it as visited.
+        - Dequeue a node from the queue.
+        - Check if we have reached the target node.
         - For each neighbor of the dequeued node, if the neighbor has not been visited, enqueue it and mark it as visited.
 3. Main Function
-    - Purpose: Initiate the BFS traversal from a starting node.
+    - Purpose: Initiate the BFS traversal.
     - Steps:
-        - Enqueue the starting node and mark it as visited.
         - Call the BFS function, which will iteratively visit all reachable nodes from the starting node in a breadthward manner.
 
 ## Example Description
@@ -176,33 +176,35 @@ class Solution:
 ### BFS Solution
 ```python
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
-        
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         adjacency_list = [[] for _ in range(n)]
-        for a, b in edges:
-            adjacency_list[a].append(b)
-            adjacency_list[b].append(a)
-        
-        queue = collections.deque([start])
-        seen = set([start])
-        
-        while queue:
-            # Get the current node.
-            node = queue.popleft()
+        for node, neighbor in edges:
+            adjacency_list[node].append(neighbor)
+            adjacency_list[neighbor].append(node)
             
-            # Check if we have reached the target node.
-            if node == end:
-                return True
-            
-            # Add all neighbors to the queue.
-            for neighbor in adjacency_list[node]:
-                # Check if neighbor has been added to the queue before.
-                if neighbor not in seen:
-                    seen.add(neighbor)
-                    queue.append(neighbor)
-        
-        # Our queue is empty and we did not reach the end node.
-        return False
+        seen = set([source])
+        queue = collections.deque([source])
+
+        def bfs(): 
+            while queue:
+                # Get the current node.
+                node = queue.popleft()
+                
+                # Check if we have reached the target node.
+                if node == destination: 
+                    return True
+
+                # Add all neighbors to the stack.
+                for neighbor in adjacency_list[node]:
+                    # Check if neighbor has been added to the queue before.
+                    if neighbor not in seen:
+                        queue.append(neighbor)
+                        seen.add(neighbor)
+
+            # Our stack is empty and we did not reach the end node.
+            return False
+
+        return bfs()
 ```
 ## Complexity Analysis
 - Time complexity : 
