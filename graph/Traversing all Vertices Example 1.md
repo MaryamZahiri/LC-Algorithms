@@ -25,15 +25,14 @@ Algorithm Pattern: DFS for Traversing All Vertices Using a Stack
     - Steps:
         - Create an ```adjacency list``` or matrix to represent the graph.
         - Initialize a ```stack``` to keep track of nodes to visit next. Push the starting node onto the stack.
-        - Initialize a set or list to keep track of ```visited/seen``` nodes.
+        - Initialize a set or list to keep track of ```visited/seen``` nodes. Starting visited is the starting node.
 2. DFS Function
     - Purpose: Explore the graph by going as deep as possible along each branch before backtracking, using a stack instead of recursive calls.
     - Steps:
         - While the stack is not empty, pop a node from the stack.
         - Check if we reach to the end node
-        - Check if the node has already been visited. If so, continue to the next iteration.
-        - Mark the node as visited.
         - For each neighbor of the current node, if the neighbor has not been visited, push it onto the stack.
+        - And mark the node as visited.
 3. Main Function
     - Purpose: Initiate the DFS traversal from a starting node.
     - Steps:
@@ -56,11 +55,11 @@ Algorithm Pattern: DFS for Traversing All Vertices Using a Stack
         - Initialize a queue to keep track of nodes to visit next.
         - Initialize a set or list to keep track of visited nodes.
 2. BFS Function
-        - Purpose: Explore the graph by visiting all the neighbors of the current node before moving on to their neighbors.
-        - Steps:
-            - Define a function that iterates over the nodes in the queue.
-            - Dequeue a node from the queue and mark it as visited.
-            - For each neighbor of the dequeued node, if the neighbor has not been visited, enqueue it and mark it as visited.
+    - Purpose: Explore the graph by visiting all the neighbors of the current node before moving on to their neighbors.
+    - Steps:
+        - Define a function that iterates over the nodes in the queue.
+        - Dequeue a node from the queue and mark it as visited.
+        - For each neighbor of the dequeued node, if the neighbor has not been visited, enqueue it and mark it as visited.
 3. Main Function
     - Purpose: Initiate the BFS traversal from a starting node.
     - Steps:
@@ -106,7 +105,40 @@ Adjacency List
 # index -> [neighbor 1, neighbor 2]
 adjacency_list = [[1,2],[0,2],[0,1]]
 ```
-Solution Code
+Solution Code 1
+```python
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        adjacency_list = [[] for _ in range(n)]
+        for node, neighbor in edges:
+            adjacency_list[node].append(neighbor)
+            adjacency_list[neighbor].append(node)
+
+        seen = set([source])
+        stack = [source]
+
+        def dfs(): 
+            while stack:
+                # Get the current node.
+                node = stack.pop()
+                
+                # Check if we have reached the target node.
+                if node == destination: 
+                    return True
+
+                # Add all neighbors to the stack.
+                for neighbor in adjacency_list[node]:
+                    # Check if we've already visited this neighbor.
+                    if neighbor not in seen:
+                        stack.append(neighbor)
+                        seen.add(neighbor)
+
+            # Our stack is empty and we did not reach the end node.
+            return False
+
+        return dfs()
+```
+Solution Code 2
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
@@ -122,7 +154,7 @@ class Solution:
             while stack:
                 # Get the current node.
                 node = stack.pop()
-
+                
                 # Check if we have reached the target node.
                 if node == destination: 
                     return True
