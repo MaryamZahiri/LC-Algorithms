@@ -52,8 +52,8 @@ Algorithm Pattern: BFS for Finding All Paths Between Two Vertices
     - Steps:
         - Enqueue the initial path, which contains only the source vertex, into the queue.
         - While the queue is not empty, dequeue a path.
-        - Check if the last vertex in the dequeued path is the target vertex. - If so, add the path to the paths list.
-        - For each neighbor of the last vertex in the dequeued path, create a new path by appending the neighbor to the dequeued path. Enqueue this new path into the queue.
+        - For each neighbor of the last vertex in the dequeued path, create a new path by appending the neighbor to the copy of dequeued path. Enqueue this new path into the queue.
+        - Check if the last vertex in the dequeued path is the target vertex. - If so, add the new path to the paths list.
 3. Main Function
     - Purpose: Initiate the BFS process to find all paths from the source to the target.
     - Steps:
@@ -88,7 +88,7 @@ Inputs
 # Index -> [neighbor 1, neighbor 2]
 graph = [[1,2],[3],[3],[]]
 ```
-Solution Code
+Solution Code 1 - dfs
 ```python
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
@@ -112,29 +112,61 @@ class Solution:
         dfs(0)
         return paths
 ```
+Solution Code 2 - dfs
+```python
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        path = [0]
+        paths = []
+
+        stack = []
+
+        def dfs():
+            stack = [path]
+            while stack:
+                current_path = stack.pop()
+                current_node = current_path[-1]
+
+                for neighbor in graph[current_node]:
+                    new_path = current_path + [neighbor]
+
+                    if neighbor == len(graph) - 1: 
+                        paths.append(new_path)
+                    else:
+                        stack.append(new_path)
+
+        dfs()
+        return paths
+```
 ### BFS Solution
 ```python
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        path = [0]
         paths = []
+        queue = deque()
+        queue.append(path)
+
         if not graph or len(graph) == 0:
             return paths
 
-        queue = deque()
-        path = [0]
-        queue.append(path)
+        def bfs():
+            while queue:
+                current_path = queue.popleft()
+                current_node = current_path[-1]
 
-        while queue:
-            current_path = queue.popleft()
-            node = current_path[-1]
-            for next_node in graph[node]:
-                temp_path = current_path.copy()
-                temp_path.append(next_node)
+                for neighbor in graph[current_node]:
+                    # new_path = current_path + [neighbor]
+                    # OR
+                    new_path = current_path.copy()
+                    new_path.append(neighbor)
 
-                if next_node == len(graph) - 1:
-                    paths.append(temp_path)
-                else:
-                    queue.append(temp_path)
+                    if neighbor == len(graph) - 1:
+                        paths.append(new_path)
+                    else:
+                        queue.append(new_path)
+
+        bfs()
         return paths
 ```
 ## Complexity Analysis
