@@ -82,11 +82,20 @@ Algorithm Pattern: BFS for Finding All Paths Between Two Vertices
 
 ## Python Code
 ### DFS Solution
+Inputs
+```python
+# Example: Graph as a adjacency list
+# Index -> [neighbor 1, neighbor 2]
+graph = [[1,2],[3],[3],[]]
+```
+Solution Code
 ```python
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         def dfs(node):
             path.append(node)
+
+            # Check if we have reached the target node.
             if node == len(graph) - 1:
                 paths.append(path.copy())
                 return
