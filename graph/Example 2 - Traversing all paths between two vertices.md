@@ -123,6 +123,7 @@ class Solution:
 
         def dfs():
             stack = [path]
+            
             while stack:
                 current_path = stack.pop()
                 current_node = current_path[-1]
@@ -145,12 +146,13 @@ class Solution:
         path = [0]
         paths = []
         queue = deque()
-        queue.append(path)
 
         if not graph or len(graph) == 0:
             return paths
 
         def bfs():
+            queue.append(path)
+
             while queue:
                 current_path = queue.popleft()
                 current_node = current_path[-1]
