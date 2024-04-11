@@ -23,9 +23,9 @@ Nodes and edges - no rules
 3. Adjancy List
 
 ## Graph Algorithm
-### 1. [Traversing all Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Traversing%20all%20Vertices%20Example%201.md)
+### 1. [Traversing all Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Example%201%20-%20Traversing%20all%20Vertices%20Example%201.md)
 
-### 2. [Traversing all paths between two vertices vs Shortest Path Between Two Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Traversing%20all%20paths%20between%20two%20vertices%20Example%202.md)
+### 2. [Traversing all paths between two vertices vs Shortest Path Between Two Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/graph/Example%202%20-%20Traversing%20all%20paths%20between%20two%20vertices.md)
 
 ## Sources
 [Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
