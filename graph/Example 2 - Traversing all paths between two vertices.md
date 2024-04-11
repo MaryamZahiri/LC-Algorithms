@@ -81,13 +81,13 @@ Algorithm Pattern: BFS for Finding All Paths Between Two Vertices
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/318677e4-c57a-4614-b358-3b19acb62405" width="250"><br />
 
 ## Python Code
-### DFS Solution
 Inputs
 ```python
 # Example: Graph as a adjacency list
 # Index -> [neighbor 1, neighbor 2]
 graph = [[1,2],[3],[3],[]]
 ```
+### DFS Solution
 Solution Code 1 - dfs
 ```python
 class Solution:

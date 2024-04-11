@@ -91,7 +91,6 @@ Algorithm Pattern: DFS for Traversing All Vertices Using a Stack
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/3427bb86-658e-4bc2-9310-277d7c13ed5e" width="250"><br />
 
 ## Python Code
-### DFS Solution
 Inputs
 ```python
 # edges -> [node, neighbor]
@@ -105,6 +104,7 @@ Adjacency List
 # index -> [neighbor 1, neighbor 2]
 adjacency_list = [[1,2],[0,2],[0,1]]
 ```
+### DFS Solution
 Solution Code 1
 ```python
 class Solution:
