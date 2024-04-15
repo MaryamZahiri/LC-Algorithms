@@ -14,8 +14,8 @@ Algorithm Pattern:
 1. Initialization:
    - Purpose: To prepare the data structure and variables needed for the algorithm.
    - Steps:
-     Create a set numNeighbors from the input list nums. This set is used to quickly check if a number exists in the list, which is an O(1) operation.
-     Initialize longest to 0. This variable will keep track of the length of the longest consecutive sequence found so far.
+        - Create a set numNeighbors from the input list nums. This set is used to quickly check if a number exists in the list, which is an O(1) operation.
+        - Initialize longest to 0. This variable will keep track of the length of the longest consecutive sequence found so far.
 2. Iterate Through Numbers:
    - Purpose: To identify and measure the length of each consecutive sequence in the input list.
    - Steps:
