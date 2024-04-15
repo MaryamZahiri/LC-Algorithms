@@ -20,7 +20,7 @@ Algorithm Pattern:
    - Purpose: To identify and measure the length of each consecutive sequence in the input list.
    - Steps:
      - For each number n in the input list nums, perform the following steps:
-        - Check if n - 1 is not in numNeighbors. If it is not, then n is the start of a new sequence.
+        - Check if n - 1 is not in numNeighbors. If it is not, then n is the start of a new sequence. It means it doesn't have a left neighbor
         - Initialize length to 0. This variable will keep track of the length of the current sequence.
         - Enter a while loop, where you keep incrementing length as long as n + length is in numNeighbors. This effectively finds the length of the consecutive sequence starting from n.
         - After finding the length of the sequence starting from n, update longest if the current sequence length is greater than the previously found longest sequence.
