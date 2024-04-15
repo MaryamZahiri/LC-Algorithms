@@ -2,7 +2,7 @@
 
 ## Problem Description
 
-Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+Given an unsorted array of integers nums, return the current_subsequence_length of the longest consecutive elements sequence.
 
 A sequence follows the pattern: ... -> n-2 -> n-1 -> n where n is the current element.
 
@@ -21,8 +21,8 @@ Algorithm Pattern:
    - Steps:
      - For each number n in the input list nums, perform the following steps:
         - Check if n - 1 is not in numNeighbors. If it is not, then n is the start of a new sequence. It means it doesn't have a left neighbor
-        - Initialize length to 0. This variable will keep track of the length of the current sequence.
-        - Enter a while loop, where you keep incrementing length as long as n + length is in numNeighbors. This effectively finds the length of the consecutive sequence starting from n.
+        - Initialize current_subsequence_length to 0. This variable will keep track of the length of the current sequence.
+        - Enter a while loop, where you keep incrementing current_subsequence_length as long as n + current_subsequence_length is in numNeighbors. This effectively finds the length of the consecutive sequence starting from n.
         - After finding the length of the sequence starting from n, update longest if the current sequence length is greater than the previously found longest sequence.
 3. Return Result:
    - Purpose: To provide the final output of the algorithm, which is the length of the longest consecutive sequence found.
@@ -66,11 +66,11 @@ class Solution:
         for n in nums:
             # Check if n is the start of sequence, doesnt have a left neighbor
             if n - 1 not in numNeighbors:
-                length = 0
+                current_subsequence_length = 0
                 # Track the longest length of sequence
-                while n + length in numNeighbors:
-                    length += 1
-                longest = max(longest, length)
+                while n + current_subsequence_length in numNeighbors:
+                    current_subsequence_length += 1
+                longest = max(longest, current_subsequence_length)
 
         return longest
 ```
