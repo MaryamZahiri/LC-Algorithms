@@ -31,3 +31,7 @@ Nodes and edges - no rules
 [Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
 
 [Data Structure](https://www.youtube.com/watch?v=ZdY1Fp9dKzs&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=40)
+
+[Neetcode](https://www.youtube.com/@NeetCode)
+
+[Lintcode](https://www.lintcode.com/)
