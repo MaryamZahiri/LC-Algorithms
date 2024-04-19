@@ -58,7 +58,7 @@ Space Complexity: O(N) space to store the array of size N.
 - Optimized “disjoint set” with Path Compression and Union by Rank
 
 ## Terms
-<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/4085b078-10d1-4f25-b493-a004fae29e21">
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/4085b078-10d1-4f25-b493-a004fae29e21" width=250><br />
 
 - Parent node: the direct parent node of a vertex. For example, in Figure , the parent node of vertex 3 is 1, the parent node of vertex 2 is 0, and the parent node of vertex 9 is 9.
 - Root node: a node without a parent node; it can be viewed as the parent node of itself. For example, in Figure, the root node of vertices 3 and 2 is 0.
