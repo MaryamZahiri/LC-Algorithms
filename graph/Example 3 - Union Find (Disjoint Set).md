@@ -1,16 +1,58 @@
 # Graph Algorithm - Union Find (Disjoint Set)
 The primary use of disjoint sets is to address the ```connectivity``` between the components of a network. 
 For instance, we can use a disjoint set to determine if two people share a common ancestor.
- 
-- Quick Find
+
+## 
+## Quick Find
 
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a7dfc4f2-9399-4f5b-8927-343a874393e7" width=250><br />
 
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a0858062-f7b0-406e-86d2-9a4e82255f70" width=250><br />
 
-- Quick Union
+```python 
+class UnionFind:
+    def __init__(self, size):
+        self.root = [i for i in range(size)]
 
-Optimization
+    def find(self, x):
+        return self.root[x]
+
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+        # if their root are not the same, union them
+        for i in range(len(self.root)):
+            if root[i] != rootY:
+                root[i] = rootX
+
+    def connected(self, x, y):
+        return self.find(x) == self.find(y)
+```
+
+```python
+# 1-2-5-6-7 3-8-9 4
+uf = UnionFind(10)
+
+uf.union(1,2)
+uf.union(2,5)
+uf.union(5,6)
+uf.union(6,7)
+
+uf.union(3,8)
+uf.union(8,9)
+
+print(uf.connected(1,5)) #True
+print(uf.connected(4,9)) #False
+```
+
+Time Complexity: O(N) because we need to traverse through the entire array
+Space Complexity: O(N) space to store the array of size N.
+
+##
+## Quick Union
+
+##
+## Optimization
 - Union by Rank
 - Path Compression Optimization
 - Optimized “disjoint set” with Path Compression and Union by Rank
