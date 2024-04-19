@@ -3,6 +3,11 @@ The primary use of disjoint sets is to address the ```connectivity``` between th
 For instance, we can use a disjoint set to determine if two people share a common ancestor.
  
 - Quick Find
+
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a7dfc4f2-9399-4f5b-8927-343a874393e7" width=250><br />
+
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a0858062-f7b0-406e-86d2-9a4e82255f70" width=250><br />
+
 - Quick Union
 
 Optimization
