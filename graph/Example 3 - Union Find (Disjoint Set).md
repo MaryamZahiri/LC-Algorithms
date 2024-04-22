@@ -18,12 +18,14 @@ class UnionFind:
         return self.root[x]
 
     def union(self, x, y):
+        # if they are connected, no need for union function
         rootX = self.find(x)
         rootY = self.find(y)
         # if their root are not the same, union them
-        for i in range(len(self.root)):
-            if root[i] != rootY:
-                root[i] = rootX
+        if rootX != rootY:
+            for i in range(len(self.root)):
+                if self.root[i] == rootY:
+                    self.root[i] = rootX
 
     def connected(self, x, y):
         return self.find(x) == self.find(y)
@@ -46,6 +48,7 @@ print(uf.connected(4,9)) #False
 ```
 
 Time Complexity: O(N) because we need to traverse through the entire array
+
 Space Complexity: O(N) space to store the array of size N.
 
 ##
