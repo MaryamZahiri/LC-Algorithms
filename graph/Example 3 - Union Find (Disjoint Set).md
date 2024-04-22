@@ -30,8 +30,9 @@ class UnionFind:
     def connected(self, x, y):
         return self.find(x) == self.find(y)
 ```
-
+Test Case:
 ```python
+# test case 
 # 1-2-5-6-7 3-8-9 4
 uf = UnionFind(10)
 
@@ -53,6 +54,53 @@ Space Complexity: O(N) space to store the array of size N.
 
 ##
 ## Quick Union
+
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/964ed433-6b00-4a0a-9f2f-37a6ccabb8b2" width=250><br />
+
+<img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/a54856cb-d15b-454d-8b47-76823480cadd" width=250><br />
+
+```python
+# UnionFind Class
+class UnionFind:
+    def __init__(self, size):
+        self.root = [i for i in range(size)]
+
+    def find(self, x):
+        while x != self.root[x]:
+            x = self.root[x]
+        return x
+
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            self.root[rootY] = rootX
+
+    def connected(self, x, y):
+        return self.find(x) == self.find(y)
+```
+Test Cases:
+```python
+# test case 
+# 1-2-5-6-7 3-8-9 4
+uf = UnionFind(10)
+
+uf.union(1,2)
+uf.union(2,5)
+uf.union(5,6)
+uf.union(6,7)
+
+uf.union(3,8)
+uf.union(8,9)
+
+print(uf.connected(1,5)) # true
+print(uf.connected(5,7)) # true
+print(uf.connected(4,9)) # false
+```
+
+Time Complexity: O(N) in the worst-case scenario, we need to traverse every vertex to find the root for the input vertex.
+
+Space Complexity: O(N) space to store the array of size N
 
 ##
 ## Optimization
