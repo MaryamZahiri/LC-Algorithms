@@ -26,6 +26,10 @@ stack_ds.push(1)
 stack_ds.push(2)
 stack_ds.push(3)
 stack_ds.check_stack()
+# [1,2,3]
 stack_removed = stack_ds.pop()
+# 3
 stack_ds.check_stack()
+# [1,2]
 stack_ds.check_top()
+#  2
