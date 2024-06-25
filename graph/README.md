@@ -1,5 +1,6 @@
 # Graph
 Non-linear data structure
+
 Nodes and edges - no rules
 ## Types of “graphs”
 ### Undirected graphs
