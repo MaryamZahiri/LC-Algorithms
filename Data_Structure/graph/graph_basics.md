@@ -2,6 +2,8 @@
 Non-linear data structure
 
 Nodes and edges - no rules
+
+
 ## Types of “graphs”
 ### Undirected graphs
 > Facebook Network | G = {V, E}
@@ -15,18 +17,22 @@ Nodes and edges - no rules
 > Road map network (weight = distances)
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/32e6a102-1577-493c-9035-88829b986e3e" width="460">
 
+
 ## Properties of Graph
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/289568f3-0c49-4315-8124-c69c0952a3cf" width="460">
+
 
 ## Graph implementation
 1. Edge List
 2. Adjancy Matrix
 3. Adjancy List
 
+
 ## Graph Algorithm
 ### 1. [Traversing all Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/Data_Structure/graph/Examples/Example%201%20-%20DFS%20vs%20BFS%20-%20Traversing%20all%20Vertices%20Example%201.md)
 
 ### 2. [Traversing all paths between two vertices vs Shortest Path Between Two Vertices](https://github.com/MaryamZahiri/LC-Algorithms/blob/master/Data_Structure/graph/Examples/Example%202%20-%20DFS%20vs%20BFS%20-%20Traversing%20all%20paths%20between%20two%20vertices.md)
+
 
 ## Sources
 [Explore Graph from Leedcode](https://leetcode.com/explore/learn/card/graph/)
