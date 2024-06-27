@@ -22,10 +22,21 @@ Nodes and edges - no rules
 <img src="https://github.com/MaryamZahiri/LC-Algorithms/assets/52676399/289568f3-0c49-4315-8124-c69c0952a3cf" width="460">
 
 
-## Graph implementation
+## Graph implementation/representation
 1. Edge List
+> Edge -> [node, neighber]
+
+```python
+edges = [[0,1],[1,2],[2,0]]
+```
+
 2. Adjancy Matrix
 3. Adjancy List
+> index -> [neighbor 1, neighbor 2]
+
+```python 
+adjacency_list = [[1,2], [0,2], [0,1]]
+```
 
 
 ## Graph Algorithm
