@@ -1,0 +1,2 @@
+## Backtracking
+Backtracking is a problem-solving algorithmic technique that involves finding a solution incrementally by trying different options and undoing them if they lead to a dead end. The backtracking algorithm is a recursive algorithm that is used to solve problems by making a series of choices, and if a choice leads to a dead end, it backtracks to the last valid choice made and tries a different path.
