@@ -1,7 +1,7 @@
 # Dynamic Programming
 - break it down into smaller subproblems - smaller versions of the original problem that are re-used multiple times
-- problem has ***optimal substructure***
-- subproblems are also ***overlapping***
+- problem has ***optimal substructure*** -> we can break complex problems to small piece and solve sub problems
+- subproblems are also ***overlapping*** -> like fibonachi(n) is fib(n - 1) + fib(n - 2)
 
 ## Two ways to implement a DP algorithm:
 - Bottom-up, also known as tabulation.
@@ -19,7 +19,7 @@ Top-down uses recursion with cache
 > problem will ask for the ***optimum value (maximum or minimum)*** of something, or the ***number of ways*** there are to do something.
 - What is the minimum cost of doing...
 - What is the maximum profit from...
-- How many ways are there to do...
+- How many ways are there to do... (count steps, ways)
 - What is the longest possible...
 - Is it possible to reach a certain point...
 
