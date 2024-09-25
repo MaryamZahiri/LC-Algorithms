@@ -238,7 +238,7 @@ Amazon phone screen question
 # follow up by most profitable path: max(f(i, j-1), f(i-1, j)) + p(i,j)
 # Transition function: F(i,j) = F(i, j-1) + F(i-1, j) -. think we solved the problem and go to the end of n, m and backward
 def uniquePaths(m, n):
-    dp = [[0] * (m+1) for i in n+1]
+    dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
 
     dp[0][0] = 1
     for i in m:
@@ -257,7 +257,7 @@ follow up - unique path with obstacles
 def uniquePaths(grid):
     m = len(grid)
     n = len(grid[0])
-    dp = [[0] * (m+1) for i in n+1]
+    dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
 
     dp[0][0] = 1
     for i in m:
@@ -274,7 +274,43 @@ def uniquePaths(grid):
                 dp[i][j] = dp[i][j-1]
         return dp[m-1][n-1]
 ```
-follow up - 
+follow up - unique path + max profit
+```python
+# transition function: f(i,j) = max(f(i-1,j), f(i,j-1)) + grid(i,j)
+def maxProfitUniquePath(grid):
+    m = len(grid)
+    n = len(grid[0])
+    dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
+
+    for i in range(m+1):
+        for j in range(n+1):
+            if i > 0 and j > 0:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+            elif i > 0:
+                dp[i][j] = dp[i-1][j] + grid[i][j]
+            elif j > 0:
+                dp[i][j] = dp[i][j-1] + grid[i][j]
+    return dp[m-1][n-1]
+```
+replacement for +grid
+```python
+# transition function: f(i,j) = max(f(i-1,j), f(i,j-1)) + grid(i,j)
+def maxProfitUniquePath(grid):
+    m = len(grid)
+    n = len(grid[0])
+    dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
+
+    for i in range(m+1):
+        for j in range(n+1):
+            dp[i][j] = grid[i][j]
+            if i > 0 and j > 0:
+                dp[i][j] += max(dp[i-1][j], dp[i][j-1])
+            elif i > 0:
+                dp[i][j] += dp[i-1][j] 
+            elif j > 0:
+                dp[i][j] += dp[i][j-1]
+    return dp[m-1][n-1]
+```
 
 ## Time and Space Complexity
 Time Complexity:
