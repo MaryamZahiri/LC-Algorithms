@@ -77,7 +77,6 @@ class Solution:
 ```
 
 ## Practice
-Sources: ![DP](https://www.youtube.com/watch?v=YcrXBDAeTCs&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf&index=9)
 climb stairs: A phone screen interview question
 - Optimize Space: O(1)
 ```python
@@ -253,9 +252,36 @@ def uniquePaths(m, n):
         return dp[m-1][n-1]
 ```
 
+follow up - unique path with obstacles
+```python
+def uniquePaths(grid):
+    m = len(grid)
+    n = len(grid[0])
+    dp = [[0] * (m+1) for i in n+1]
+
+    dp[0][0] = 1
+    for i in m:
+        for j in n:
+            # obstacles
+            if grid[i][j]: 
+                dp[i][j] = 0
+                continue
+            if i > 0 and j>0:
+                dp[i][j] = dp[i-1][j] + dp[i][j-1]
+            elif i > 0: # j = 0
+                dp[i][j] = dp[i -1][j]
+            elif j > 0: # i = 0
+                dp[i][j] = dp[i][j-1]
+        return dp[m-1][n-1]
+```
+follow up - 
+
 ## Time and Space Complexity
 Time Complexity:
 - optimize solution that turn exponantioal 2 ^ n to polynominal n ^ 2 or linear time n
 
 Space Complexity:
 - Cash n
+
+## Sources: 
+![DP](https://www.youtube.com/watch?v=YcrXBDAeTCs&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf&index=9)
