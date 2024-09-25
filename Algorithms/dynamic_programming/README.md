@@ -28,14 +28,28 @@ Top-down uses recursion with cache
 > we need to factor in results from ***previous decisions***.
 Example: [House Robber](https://leetcode.com/problems/house-robber/description/) | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description/)
 
+## LeetCode Problems for Practice
+[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+
+[Coin Change](https://leetcode.com/problems/coin-change/description/)
+
+[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description/)
+
+[Unique Paths](https://leetcode.com/problems/unique-paths/description/)
+
+[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
+
 ## Strategic Approach to DP
 To solve a DP problem, we need to combine 3 things:
-1. Objective Function: A function or data structure that will compute/contain the answer to the problem for every given state. dp(i)
-2. Transition Function: A recurrence relation to transition between states.
-3. Base cases, so that our recurrence relation doesn't go on infinitely.
+1. Objective Function: Problem description. A function or data structure that will compute/contain the answer to the problem for every given state. dp(i) - and
+Identify Subproblems: Break down the problem into smaller subproblems, identifying the parameters needed to define each subproblem.
+2. Transition Function: Find a function to solve any small to large problems. A recurrence relation to transition between states. Determine how the solution to one subproblem can be used to solve other related subproblems.
+3. Implement Memoization or Tabulation: Choose between top-down memoization or bottom-up tabulation based on the problem's characteristics.
+4. Handle Base Cases: Ensure that base cases are properly handled to terminate recursion or initialize tabulation. so that our recurrence relation doesn't go on infinitely.
 
+### Examples
 Top-down, With memoization, our time complexity drops to O(n) - implementations usually use an hashmap dp = {} (cache)
-![70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+[70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
 ```python
 # Objective Function: f(i) is the number of ways to ith stair
 # base cases
@@ -322,4 +336,4 @@ Space Complexity:
 - Cash n
 
 ## Sources: 
-![DP](https://www.youtube.com/watch?v=YcrXBDAeTCs&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf&index=9)
+[DP](https://www.youtube.com/watch?v=YcrXBDAeTCs&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf&index=9)
