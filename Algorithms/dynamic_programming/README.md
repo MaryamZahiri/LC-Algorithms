@@ -35,6 +35,7 @@ To solve a DP problem, we need to combine 3 things:
 3. Base cases, so that our recurrence relation doesn't go on infinitely.
 
 Top-down, With memoization, our time complexity drops to O(n) - implementations usually use an hashmap dp = {} (cache)
+![70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
 ```python
 # Objective Function: f(i) is the number of ways to ith stair
 # base cases
@@ -45,7 +46,7 @@ Top-down, With memoization, our time complexity drops to O(n) - implementations 
 class Solution:
     def climbStairs(self, n: int) -> int:
         def dp(i):
-            if i <= 2: 
+            if i <= 1: 
                 return i
             if i not in memo:
                 # Instead of just returning dp(i - 1) + dp(i - 2), calculate it once and then
@@ -77,7 +78,8 @@ class Solution:
 ```
 
 ## Practice
-climb stairs: A phone screen interview question
+### climb stairs: 
+- A phone screen interview question
 - Optimize Space: O(1)
 ```python
 def climbStairs(n):
@@ -199,7 +201,7 @@ def paidClimbStairPath(n, p):
     return path[::-1]
 ```
 
-Sum of n nums
+### Sum of n nums
 ```python
 # Find sum of first N nums
 # Objective function: f(i) is sum of first i elements; Problem description
@@ -223,8 +225,8 @@ n = 5
 sum_nums(n)
 ```
 
-Amazon phone screen question
-- Unique paths
+### Unique paths
+- Amazon phone screen question
 ```python
 # Find f(i): how many possible paths are there
 # base cases: 
