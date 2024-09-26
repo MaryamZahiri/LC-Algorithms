@@ -1,14 +1,14 @@
 # Dynamic Programming
 - break it down into smaller subproblems - smaller versions of the original problem that are re-used multiple times
 - problem has ***optimal substructure*** -> we can break complex problems to small piece and solve *sub problems*
-- subproblems are also ***overlapping*** -> like fibonachi(n) is fib(n - 1) + fib(n - 2)
+- subproblems are also ***overlapping*** -> like fibonacci(n) is fib(n - 1) + fib(n - 2)
 
 ## Two ways to implement a DP algorithm:
-- Bottom-up, also known as tabulation.
+- Bottom-up, also known as tabulation. (use table/array to store data)
 Bottom-up uses iteration
 > A bottom-up implementation's runtime is usually ***faster***, as iteration does not have the overhead that recursion does.
 - Top-down, also known as memoization.
-Top-down uses recursion with cache
+Top-down uses recursion with cache (memoization)
 > memoizing a result means to store the result of a function call, usually in a hashmap or an array, so that when the same function call is made again, we can simply return the memoized result instead of recalculating the result.
 > A top-down implementation is usually much ***easier to write***. This is because with recursion, the ***ordering of subproblems does not matter***, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
 
@@ -30,7 +30,7 @@ Example: [House Robber](https://leetcode.com/problems/house-robber/description/)
 
 ## LeetCode Problems for Practice
 [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/):
-- Fibonachi -> f(n) = f(n-1) + f(n-2)
+- fibonacci -> f(n) = f(n-1) + f(n-2)
 
 [Coin Change](https://leetcode.com/problems/coin-change/description/)
 
