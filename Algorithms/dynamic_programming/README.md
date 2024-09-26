@@ -29,7 +29,8 @@ Top-down uses recursion with cache
 Example: [House Robber](https://leetcode.com/problems/house-robber/description/) | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description/)
 
 ## LeetCode Problems for Practice
-[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/):
+- Fibonachi -> f(n) = f(n-1) + f(n-2)
 
 [Coin Change](https://leetcode.com/problems/coin-change/description/)
 
@@ -48,9 +49,9 @@ Identify Subproblems: Break down the problem into smaller subproblems, identifyi
 4. Handle Base Cases: Ensure that base cases are properly handled to terminate recursion or initialize tabulation. so that our recurrence relation doesn't go on infinitely.
 
 ### Examples
-Top-down, With memoization, our time complexity drops to O(n) - implementations usually use an hashmap dp = {} (cache)
+*Top-down, With memoization*, our time complexity drops to O(n) - implementations usually use an hashmap dp = {} (cache)
 
-[70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+[70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/) 
 ```python
 # Objective Function: f(i) is the number of ways to ith stair
 # base cases
@@ -331,6 +332,8 @@ def maxProfitUniquePath(grid):
                 dp[i][j] += dp[i][j-1]
     return dp[m-1][n-1]
 ```
+follow up - max Profit path with returning max path idx
+- getPath
 
 ## Time and Space Complexity
 Time Complexity:
