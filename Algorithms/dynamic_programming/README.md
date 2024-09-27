@@ -4,11 +4,14 @@
 - subproblems are also ***overlapping*** -> like fibonacci(n) is fib(n - 1) + fib(n - 2)
 
 ## Two ways to implement a DP algorithm:
-- Bottom-up, also known as tabulation. (use table/array to store data)
-Bottom-up uses iteration
+### Bottom-up, also known as tabulation. 
+- use *table/array* to store data
+- Bottom-up uses *iteration*
+- Build from scratch
 > A bottom-up implementation's runtime is usually ***faster***, as iteration does not have the overhead that recursion does.
-- Top-down, also known as memoization.
-Top-down uses recursion with cache (memoization)
+### Top-down, also known as memoization.
+- Top-down uses *recursion with cache* (memoization)
+- when we dont have specific details
 > memoizing a result means to store the result of a function call, usually in a hashmap or an array, so that when the same function call is made again, we can simply return the memoized result instead of recalculating the result.
 > A top-down implementation is usually much ***easier to write***. This is because with recursion, the ***ordering of subproblems does not matter***, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
 
