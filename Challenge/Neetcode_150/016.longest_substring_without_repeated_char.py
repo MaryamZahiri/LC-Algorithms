@@ -41,23 +41,24 @@ class Solution:
     S: O(n)
     """
     def lengthOfLongestSubstringBF(self, s: str) -> int:
+        if not len(s): return 0
+        
         def check(start, end):
-            chars = set()
+            seen = set()
             for i in range(start, end + 1):
-                c = s[i]
-                if c in chars:
-                    return False
-                chars.add(c)
+                if s[i] in seen: return False
+                seen.add(s[i])
             return True
 
-        n = len(s)
-
-        res = 0
-        for i in range(n):
-            for j in range(i, n):
-                if check(i, j):
-                    res = max(res, j - i + 1)
-        return res
+        max_sub_len = 1
+        length = len(s)
+        for i in range(length-1):
+            for j in range(i+1, length):
+                if check(i,j):
+                    max_sub_len = max(max_sub_len, j - i + 1)
+                else:
+                    break
+        return max_sub_len
     """
     T: O(n^3) S: O(n)
     """
