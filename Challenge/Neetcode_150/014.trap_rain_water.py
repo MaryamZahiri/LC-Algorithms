@@ -73,3 +73,7 @@ SC: O(1)
  sum:
  0+1+0+1+2+1+0+0+1+0+0
 """
+if "__main__" == __name__:
+    height = [0,1,0,2,1,0,1,3,2,1,2,1]
+    sol = Solution()
+    print(sol.trap(height))
