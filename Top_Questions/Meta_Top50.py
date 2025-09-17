@@ -140,6 +140,18 @@ class Meta:
 ################################################
 word = "internationalization", abbr = "i12iz4n"
 
+facebook
+7
+
+face
+f1e
+
+face
+f2e
+
+face
+01ace
+
 ################################################
 lead 0 -> False 010
 """
@@ -341,6 +353,7 @@ class Solution:
         return res
 ##############################################################
 # 5. 314. Binary Tree Vertical Order Traversal *J
+# https://leetcode.com/problems/binary-tree-vertical-order-traversal/description/
 ##############################################################
 """
 1st approach -> BFS + sorted ->
@@ -507,6 +520,7 @@ class Meta:
 """
 ##############################################################
 # 8. 528. Random Pick with Weight
+# https://leetcode.com/problems/random-pick-with-weight/description/
 ##############################################################
 """
 Time: 
@@ -550,6 +564,7 @@ IDX [0,1,2] -> 1/8, 3/8, 4/8     ->              [0-1,1-4,4-8] -> random target
 """
 ##############################################################
 # 9. 215. Kth Largest Element in an Array @quick
+# https://leetcode.com/problems/kth-largest-element-in-an-array/description/
 ##############################################################
 """
 Time: O(nlogk)
