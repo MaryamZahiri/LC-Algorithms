@@ -465,6 +465,19 @@ root parent is None -> swap
 Example:
 [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1 -> parent 3
 """
+class Solution:
+    def lowestCommonAncestor(self, root, p, q):
+        def dfs(node):
+            # base case
+            if not node or node == p or node == q: return node
+
+            # traverse
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            return node if left and right else left if left else right
+
+        return dfs(root)
 ##############################################################
 # 7. 339. Nested List Weight Sum *M
 # https://leetcode.com/problems/nested-list-weight-sum/description/
@@ -636,6 +649,7 @@ class Solution:
 # quick select - O(n)
 ##############################################################
 # 10. 680. Valid Palindrome II
+# https://leetcode.com/problems/valid-palindrome-ii/
 ##############################################################
 """
 2 pointers:
@@ -709,8 +723,26 @@ class Meta:
 
         return isPalindrome(0, len(s) - 1)
     
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        def isValid(left, right, counter):
+            while left < right:
+                if s[left] != s[right]:
+                    if counter: return False
+                    # skip
+                    return isValid(left + 1, right, counter + 1) or isValid(left, right - 1, counter + 1)
+                left += 1
+                right -= 1
+            return True
+
+        return isValid(0, len(s) - 1, 0)
+"""
+T: O(n) proportional
+S: O(1)
+"""
 ##############################################################
 # 11. 1570. Dot Product of Two Sparse Vectors *F
+# https://leetcode.com/problems/dot-product-of-two-sparse-vectors/description/
 ##############################################################
 """
 Hashtable:
@@ -881,6 +913,7 @@ print(answer)  # -> 4*5 + 2*6 = 20 + 12 = 32
 # 2 pointer k1 + k2
 ##############################################################
 # 12. 560. Subarray Sum Equals K
+# https://leetcode.com/problems/subarray-sum-equals-k/description/?roomId=BweTae
 ##############################################################
 """
 T: O(n)
@@ -942,7 +975,8 @@ current + pre_sum -> pre_sum - k = removable sub array
 }
 """
 ##############################################################
-# 13. 162. Find Peak Element *F (Vallay - local min)
+# 13. 162. Find Peak Element (Vallay - local min) *F 
+# https://leetcode.com/problems/find-peak-element/description/
 ##############################################################
 """
 Time: O(logn)
@@ -1017,6 +1051,7 @@ unique? nums[i] != nums[i + 1] for all valid i
 """
 ##############################################################
 # 14. 347. Top K Frequent Elements
+# https://leetcode.com/problems/top-k-frequent-elements/description/
 ##############################################################
 """
 Time: O(n + m.logk) 
@@ -1111,6 +1146,7 @@ class Meta:
         return sorted_freq[:k]
 ##############################################################
 # 15. 71. Simplify Path
+# https://leetcode.com/problems/simplify-path/description/
 ##############################################################
 """
 Time: O(n) = O(n)
@@ -1175,6 +1211,7 @@ valid unix path, empty?
 """
 ##############################################################
 # 16. 50. Pow(x, n) *F
+# https://leetcode.com/problems/powx-n/description/
 ##############################################################
 """
 iteration:
